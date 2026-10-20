@@ -1,0 +1,2084 @@
+! =============================================================
+  ! HD-EI-SW01  —  Arista DCS-7010T-48-R
+  ! Site   : Hickory Drive Office
+  ! Role   : Switch
+  ! =============================================================
+  
+  ! --- Hostname ---
+  hostname HD-EI-SW01
+
+  ! --- Management VRF ---
+  vrf instance MGMT
+
+  ! --- AAA / Users ---
+  username admin privilege 15 role network-admin secret sha512 $6$CHANGEME
+  !
+  aaa authorization exec default local
+
+  ! --- Management Interface ---
+  interface Management1
+  
+     ! WARNING: No primary IP set in NetBox for this device
+  
+     vrf MGMT
+     no shutdown
+  !
+  
+  ip route vrf MGMT 0.0.0.0/0 192.168.100.1
+  
+
+  ! --- DNS ---
+  
+  ip domain-name hickory.evolve.local
+  dns domain hickory.evolve.local
+  
+  
+  ip name-server vrf MGMT 192.168.100.10
+  
+  ip name-server vrf MGMT 192.168.100.11
+  
+
+  ! --- NTP ---
+  
+  ntp server vrf MGMT 192.168.100.10
+  
+  ntp server vrf MGMT 192.168.100.11
+  
+
+  ! --- Syslog ---
+  logging on
+  logging buffered 16384
+  
+  logging host 192.168.100.20 vrf MGMT
+  
+
+  ! --- SNMP ---
+  
+  snmp-server community CHANGEME ro
+  
+  snmp-server location Hickory Drive Office
+  snmp-server contact noc@evolve.local
+
+  ! --- VLANs ---
+  
+  vlan 100
+     name HICKORY-DRIVE-MANAGEMENT
+  
+  vlan 700
+     name HICKORY-DRIVE-VOICE
+  
+  vlan 800
+     name HICKORY-DRIVE-PRINTERS
+  
+  vlan 900
+     name HICKORY-DRIVE-MARKETING
+  
+  vlan 1000
+     name HICKORY-DRIVE-HR
+  
+  vlan 1100
+     name HICKORY-DRIVE-PR
+  
+  vlan 1200
+     name HICKORY-DRIVE-SALES
+  
+  vlan 1300
+     name HICKORY-DRIVE-ENGINEERING
+  
+  vlan 1400
+     name HICKORY-DRIVE-IT
+  
+  vlan 1500
+     name HICKORY-DRIVE-CSR
+  
+  vlan 1600
+     name HICKORY-DRIVE-FINANCE
+  
+  vlan 1700
+     name HICKORY-DRIVE-QA
+  
+  vlan 1800
+     name HICKORY-DRIVE-PRODUCT
+  
+  vlan 1900
+     name HICKORY-DRIVE-PMO
+  
+  vlan 2000
+     name HICKORY-DRIVE-GTM
+  
+  vlan 2100
+     name HICKORY-DRIVE-SECURITY
+  
+  vlan 2200
+     name HICKORY-DRIVE-AV
+  
+  vlan 2300
+     name HICKORY-DRIVE-SDR
+  
+  vlan 2400
+     name HICKORY-DRIVE-PRODUCTION
+  
+  vlan 2401
+     name HICKORY-DRIVE-EDITING
+  
+  vlan 2402
+     name HICKORY-DRIVE-APP-SERVER
+  
+  vlan 2403
+     name HICKORY-DRIVE-DB-SERVER
+  
+  vlan 2404
+     name HICKORY-DRIVE-WEB-SERVER
+  
+  vlan 2405
+     name HICKORY-DRIVE-VDI
+  
+  vlan 2406
+     name HICKORY-DRIVE-PHONES
+  
+  vlan 2407
+     name HICKORY-DRIVE-CAMERAS
+  
+  vlan 2408
+     name HICKORY-DRIVE-FOO
+  
+  vlan 2409
+     name HICKORY-DRIVE-SPORTS
+  
+  vlan 2410
+     name HICKORY-DRIVE-MUSIC
+  
+  vlan 2411
+     name HICKORY-DRIVE-VM
+  
+  vlan 2412
+     name HICKORY-DRIVE-LOAD-TEST
+  
+  vlan 2413
+     name HICKORY-DRIVE-VENDORS
+  
+  vlan 2414
+     name HICKORY-DRIVE-IOT
+  
+  vlan 2415
+     name HICKORY-DRIVE-DMZ
+  
+  vlan 2416
+     name HICKORY-DRIVE-EXECUTIVE
+  
+  vlan 2417
+     name HICKORY-DRIVE-BACKUP
+  
+  vlan 2418
+     name HICKORY-DRIVE-DEVELOPMENT
+  
+  vlan 2419
+     name HICKORY-DRIVE-CONTRACTORS
+  
+  vlan 2420
+     name HICKORY-DRIVE-QUARANTINE
+  
+  vlan 2421
+     name HICKORY-DRIVE-MONITORING
+  
+  vlan 2422
+     name HICKORY-DRIVE-HELPDESK
+  
+  vlan 2423
+     name HICKORY-DRIVE-LEGAL
+  
+  vlan 2424
+     name HICKORY-DRIVE-LOGGING
+  
+  vlan 2425
+     name HICKORY-DRIVE-JUMP-HOST
+  
+  vlan 2426
+     name HICKORY-DRIVE-COMPLIANCE
+  
+  vlan 2427
+     name HICKORY-DRIVE-KUBERNETES
+  
+  vlan 2428
+     name HICKORY-DRIVE-MULTICAST
+  
+  vlan 2429
+     name HICKORY-DRIVE-DR
+  
+  vlan 2430
+     name HICKORY-DRIVE-OUT-OF-BAND
+  
+  vlan 2431
+     name HICKORY-DRIVE-AP
+  
+  vlan 2432
+     name HICKORY-DRIVE-WIRELESS
+  
+  vlan 2433
+     name HICKORY-DRIVE-MAINTENANCE
+  
+  vlan 2434
+     name HICKORY-DRIVE-2434
+  
+  vlan 2435
+     name HICKORY-DRIVE-2435
+  
+  vlan 2436
+     name HICKORY-DRIVE-2436
+  
+  vlan 2437
+     name HICKORY-DRIVE-2437
+  
+  vlan 2438
+     name HICKORY-DRIVE-2438
+  
+  vlan 2439
+     name HICKORY-DRIVE-2439
+  
+  vlan 2440
+     name HICKORY-DRIVE-2440
+  
+  vlan 2441
+     name HICKORY-DRIVE-2441
+  
+  vlan 2442
+     name HICKORY-DRIVE-2442
+  
+  vlan 2443
+     name HICKORY-DRIVE-2443
+  
+  vlan 2444
+     name HICKORY-DRIVE-2444
+  
+  vlan 2445
+     name HICKORY-DRIVE-2445
+  
+  vlan 2446
+     name HICKORY-DRIVE-2446
+  
+  vlan 2447
+     name HICKORY-DRIVE-2447
+  
+  vlan 2448
+     name HICKORY-DRIVE-2448
+  
+  vlan 2449
+     name HICKORY-DRIVE-2449
+  
+  vlan 2450
+     name HICKORY-DRIVE-2450
+  
+  vlan 2451
+     name HICKORY-DRIVE-2451
+  
+  
+  ! --- Spanning Tree ---
+  spanning-tree mode rapid-pvst
+  
+  spanning-tree vlan-id 100 priority 32768
+  
+  spanning-tree vlan-id 700 priority 32768
+  
+  spanning-tree vlan-id 800 priority 32768
+  
+  spanning-tree vlan-id 900 priority 32768
+  
+  spanning-tree vlan-id 1000 priority 32768
+  
+  spanning-tree vlan-id 1100 priority 32768
+  
+  spanning-tree vlan-id 1200 priority 32768
+  
+  spanning-tree vlan-id 1300 priority 32768
+  
+  spanning-tree vlan-id 1400 priority 32768
+  
+  spanning-tree vlan-id 1500 priority 32768
+  
+  spanning-tree vlan-id 1600 priority 32768
+  
+  spanning-tree vlan-id 1700 priority 32768
+  
+  spanning-tree vlan-id 1800 priority 32768
+  
+  spanning-tree vlan-id 1900 priority 32768
+  
+  spanning-tree vlan-id 2000 priority 32768
+  
+  spanning-tree vlan-id 2100 priority 32768
+  
+  spanning-tree vlan-id 2200 priority 32768
+  
+  spanning-tree vlan-id 2300 priority 32768
+  
+  spanning-tree vlan-id 2400 priority 32768
+  
+  spanning-tree vlan-id 2401 priority 32768
+  
+  spanning-tree vlan-id 2402 priority 32768
+  
+  spanning-tree vlan-id 2403 priority 32768
+  
+  spanning-tree vlan-id 2404 priority 32768
+  
+  spanning-tree vlan-id 2405 priority 32768
+  
+  spanning-tree vlan-id 2406 priority 32768
+  
+  spanning-tree vlan-id 2407 priority 32768
+  
+  spanning-tree vlan-id 2408 priority 32768
+  
+  spanning-tree vlan-id 2409 priority 32768
+  
+  spanning-tree vlan-id 2410 priority 32768
+  
+  spanning-tree vlan-id 2411 priority 32768
+  
+  spanning-tree vlan-id 2412 priority 32768
+  
+  spanning-tree vlan-id 2413 priority 32768
+  
+  spanning-tree vlan-id 2414 priority 32768
+  
+  spanning-tree vlan-id 2415 priority 32768
+  
+  spanning-tree vlan-id 2416 priority 32768
+  
+  spanning-tree vlan-id 2417 priority 32768
+  
+  spanning-tree vlan-id 2418 priority 32768
+  
+  spanning-tree vlan-id 2419 priority 32768
+  
+  spanning-tree vlan-id 2420 priority 32768
+  
+  spanning-tree vlan-id 2421 priority 32768
+  
+  spanning-tree vlan-id 2422 priority 32768
+  
+  spanning-tree vlan-id 2423 priority 32768
+  
+  spanning-tree vlan-id 2424 priority 32768
+  
+  spanning-tree vlan-id 2425 priority 32768
+  
+  spanning-tree vlan-id 2426 priority 32768
+  
+  spanning-tree vlan-id 2427 priority 32768
+  
+  spanning-tree vlan-id 2428 priority 32768
+  
+  spanning-tree vlan-id 2429 priority 32768
+  
+  spanning-tree vlan-id 2430 priority 32768
+  
+  spanning-tree vlan-id 2431 priority 32768
+  
+  spanning-tree vlan-id 2432 priority 32768
+  
+  spanning-tree vlan-id 2433 priority 32768
+  
+  spanning-tree vlan-id 2434 priority 32768
+  
+  spanning-tree vlan-id 2435 priority 32768
+  
+  spanning-tree vlan-id 2436 priority 32768
+  
+  spanning-tree vlan-id 2437 priority 32768
+  
+  spanning-tree vlan-id 2438 priority 32768
+  
+  spanning-tree vlan-id 2439 priority 32768
+  
+  spanning-tree vlan-id 2440 priority 32768
+  
+  spanning-tree vlan-id 2441 priority 32768
+  
+  spanning-tree vlan-id 2442 priority 32768
+  
+  spanning-tree vlan-id 2443 priority 32768
+  
+  spanning-tree vlan-id 2444 priority 32768
+  
+  spanning-tree vlan-id 2445 priority 32768
+  
+  spanning-tree vlan-id 2446 priority 32768
+  
+  spanning-tree vlan-id 2447 priority 32768
+  
+  spanning-tree vlan-id 2448 priority 32768
+  
+  spanning-tree vlan-id 2449 priority 32768
+  
+  spanning-tree vlan-id 2450 priority 32768
+  
+  spanning-tree vlan-id 2451 priority 32768
+  
+
+  ! --- Interfaces ---
+  
+  
+  
+  interface Ethernet1
+  
+     description UPLINK
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet10
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet11
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet12
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet13
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet14
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet15
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet16
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet17
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet18
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet19
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet2
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet20
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet21
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet22
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet23
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet24
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet25
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet26
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet27
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet28
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet29
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet3
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet30
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet31
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet32
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet33
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet34
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet35
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet36
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet37
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet38
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet39
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet4
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet40
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet41
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet42
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet43
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet44
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet45
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet46
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet47
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet48
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet49
+  
+     description CIRCUIT 20212223 | DC2 TO HICKORY DRIVE
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet5
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet50
+  
+     description CIRCUIT 12345678 | DC1 TO HICKORY DRIVE
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet51
+  
+     description CIRCUIT 8910111 | DC1 TO HICKORY DRIVE
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet52
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet6
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet7
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet8
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Ethernet9
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  
+  
+  
+  
+  interface Port-Channel100
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan100
+  
+     description HICKORY-DRIVE-MANAGEMENT
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1000
+  
+     description HICKORY-DRIVE-HR
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1100
+  
+     description HICKORY-DRIVE-PR
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1200
+  
+     description HICKORY DRIVE-SALES
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1300
+  
+     description HICKORY-DRIVE-ENGINEERING
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1400
+  
+     description HICKORY-DRIVE-IT
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1500
+  
+     description HICKORY-DRIVE-CSR
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1600
+  
+     description HICKORY-DRIVE-FINANCE
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1700
+  
+     description HICKORY-DRIVE-QA
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1800
+  
+     description HICKORY-DRIVE-PRODUCT
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan1900
+  
+     description HICKORY-DRIVE-PMO
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2000
+  
+     description HICKORY-DRIVE-GTM
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2100
+  
+     description HICKORY-DRIVE-SECURITY
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2200
+  
+     description HICKORY-DRIVE-AV
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2300
+  
+     description HICKORY-DRIVE-SDR
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2400
+  
+     description HICKORY-DRIVE-PRODUCTION
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2401
+  
+     description HICKORY-DRIVE-EDITING
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2402
+  
+     description HICKORY-DRIVE-APP-SERVER
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2403
+  
+     description HICKORY-DRIVE-DB-SERVER
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2404
+  
+     description HICKORY-DRIVE-WEB-SERVER
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2405
+  
+     description HICKORY-DRIVE-VDI
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2406
+  
+     description HICKORY-DRIVE-PHONES
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2407
+  
+     description HICKORY-DRIVE-CAMERAS
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2408
+  
+     description HICKORY-DRIVE-FOO
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2409
+  
+     description HICKORY-DRIVE-SPORTS
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2410
+  
+     description HICKORY-DRIVE-MUSIC
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2411
+  
+     description HICKORY-DRIVE-VM
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2412
+  
+     description HICKORY-DRIVE-LOAD-TEST
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2413
+  
+     description HICKORY-DRIVE-VENDORS
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2414
+  
+     description HICKORY-DRIVE-IOT
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2415
+  
+     description HICKORY-DRIVE-DMZ
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2416
+  
+     description HICKORY-DRIVE-EXECUTIVE
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2417
+  
+     description HICKORY-DRIVE-BACKUP
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2418
+  
+     description HICKORY-DRIVE-DEVELOPMENT
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2419
+  
+     description HICKORY-DRIVE-CONTRACTORS
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2420
+  
+     description HICKORY-DRIVE-QUARANTINE
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2421
+  
+     description HICKORY-DRIVE-MONITORING
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2422
+  
+     description HICKORY-DRIVE-HELPDESK
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2423
+  
+     description HICKORY-DRIVE-LEGAL
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2424
+  
+     description HICKORY-DRIVE-LOGGING
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2425
+  
+     description HICKORY-DRIVE-JUMP-HOST
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2426
+  
+     description HICKORY-DRIVE-COMPLIANCE
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2427
+  
+     description HICKORY-DRIVE-KUBERNETES
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2428
+  
+     description HICKORY-DRIVE-MULTICAST
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2429
+  
+     description HICKORY-DRIVE-DR
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2430
+  
+     description HICKORY-DRIVE-OUT0OF-BAND
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2431
+  
+     description HICKORY-DRIVE-AP
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2432
+  
+     description HICKORY-DRIVE-WIRELESS
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2433
+  
+     description HICKORY-DRIVE-MAINTENANCE
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2434
+  
+     description HICKORY-DRIVE-2434
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2435
+  
+     description HICKORY-DRIVE-2435
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2436
+  
+     description HICKORY-DRIVE-2436
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2437
+  
+     description HICKORY-DRIVE-2437
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2438
+  
+     description HICKORY-DRIVE-2438
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2439
+  
+     description HICKORY-DRIVE-2439
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2440
+  
+     description HICKORY-DRIVE-2440
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2441
+  
+     description HICKORY-DRIVE-2441
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2442
+  
+     description HICKORY-DRIVE-2442
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2443
+  
+     description HICKORY-DRIVE-2443
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2444
+  
+     description HICKORY-DRIVE-2444
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2445
+  
+     description HICKORY-DRIVE-2445
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2446
+  
+     description HICKORY-DRIVE-2446
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2447
+  
+     description HICKORY-DRIVE-2447
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2448
+  
+     description HICKORY-DRIVE-2448
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2449
+  
+     description HICKORY-DRIVE-2449
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2450
+  
+     description HICKORY-DRIVE-2450
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2451
+  
+     description HICKORY-DRIVE-2450
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan700
+  
+     description HICKORY-DRIVE-VOICE
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan800
+  
+     description HICKORY-DRIVE-PRINTERS
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan900
+  
+     description HICKORY-DRIVE-MARKETING
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+
+  ! --- eAPI ---
+  management api http-commands
+     no shutdown
+     !
+     vrf MGMT
+        no shutdown
+
+  ! --- SSH ---
+  management ssh
+     idle-timeout 10
+     vrf MGMT
+        no shutdown
+
+  ! --- Banner ---
+  banner login
+  ===========================================================
+    Authorized access only. HD-EI-SW01 — Hickory Drive Office
+    All activity is monitored and logged.
+  ===========================================================
+  EOF
+
+  ! --- End of HD-EI-SW01 config ---
