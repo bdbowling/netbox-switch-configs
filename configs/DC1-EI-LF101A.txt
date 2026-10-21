@@ -150,7 +150,7 @@ interface Ethernet5
    switchport
 !
 interface Ethernet6
-   description WEBHOOK
+   description UPLINK-10.20.26
    no shutdown
    switchport
 !
