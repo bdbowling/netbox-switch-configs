@@ -150,7 +150,7 @@ interface Ethernet5
    switchport
 !
 interface Ethernet6
-   description Jim
+   description Ben
    no shutdown
    switchport
 !
