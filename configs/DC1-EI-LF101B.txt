@@ -169,7 +169,7 @@ interface Ethernet5
    switchport
 !
 interface Ethernet6
-   description WEBHOOK
+   description WEBHOOK-TEST
    no shutdown
    switchport
 !
