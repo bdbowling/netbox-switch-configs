@@ -98,6 +98,22 @@ interface Management1
 ! ---------- Interfaces ----------
 !
 !
+interface Ethernet49/1/1
+   no shutdown
+   switchport
+!
+interface Ethernet49/1/2
+   no shutdown
+   switchport
+!
+interface Ethernet49/1/3
+   no shutdown
+   switchport
+!
+interface Ethernet49/1/4
+   no shutdown
+   switchport
+!
 interface Ethernet49/1
    description BREAKOUT | DC1-EI-LB101A
    no shutdown
