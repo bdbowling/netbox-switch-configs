@@ -556,6 +556,8 @@
   
   interface Ethernet2
   
+     description UPLINK
+  
   
      no shutdown
   
