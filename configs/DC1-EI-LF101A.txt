@@ -115,7 +115,6 @@ interface Ethernet49/1/4
    switchport
 !
 interface Ethernet49/1
-   description BREAKOUT | DC1-EI-LB101A
    no shutdown
    switchport
 !
