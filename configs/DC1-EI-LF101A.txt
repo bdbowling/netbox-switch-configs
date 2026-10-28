@@ -165,7 +165,7 @@ interface Ethernet5
    switchport
 !
 interface Ethernet6
-   description Ben
+   description Tuesday
    no shutdown
    switchport
 !
