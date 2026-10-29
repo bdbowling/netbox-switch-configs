@@ -422,7 +422,7 @@
   
   interface Ethernet1
   
-     description UPLINK
+     description RESERVED
   
   
      no shutdown
