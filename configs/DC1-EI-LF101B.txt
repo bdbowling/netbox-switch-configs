@@ -168,11 +168,6 @@ interface Ethernet5
    no shutdown
    switchport
 !
-interface Ethernet6
-   description WEBHOOK-TEST
-   no shutdown
-   switchport
-!
 interface Ethernet7
    no shutdown
    switchport
@@ -372,6 +367,11 @@ interface PortChannel3
    switchport
 !
 interface PortChannel4
+   no shutdown
+   switchport
+!
+interface RESERVED
+   description WEBHOOK-TEST
    no shutdown
    switchport
 
