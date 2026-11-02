@@ -18,7 +18,7 @@
   ! --- Management Interface ---
   interface Management1
   
-     ! WARNING: No primary IP set in NetBox for this device
+     ip address 10.0.0.100/24
   
      vrf MGMT
      no shutdown
