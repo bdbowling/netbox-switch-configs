@@ -930,6 +930,8 @@
   
   interface Ethernet48
   
+     description ACCESS
+  
   
      no shutdown
   
