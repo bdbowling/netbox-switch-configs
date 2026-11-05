@@ -967,6 +967,8 @@
   
   interface Ethernet45
   
+     description RESERVED
+  
   
      no shutdown
   
