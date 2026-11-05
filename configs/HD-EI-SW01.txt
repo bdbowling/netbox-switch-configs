@@ -1065,6 +1065,8 @@
   
   interface Loopback1
   
+     description AUTOMATION TEST
+  
   
      no shutdown
   
