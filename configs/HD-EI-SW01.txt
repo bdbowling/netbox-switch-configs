@@ -441,6 +441,8 @@
   
   interface Ethernet10
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -452,6 +454,8 @@
   
   
   interface Ethernet11
+  
+     description RESERVED
   
   
      no shutdown
@@ -465,6 +469,8 @@
   
   interface Ethernet12
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -476,6 +482,8 @@
   
   
   interface Ethernet13
+  
+     description RESERVED
   
   
      no shutdown
@@ -489,6 +497,8 @@
   
   interface Ethernet14
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -500,6 +510,8 @@
   
   
   interface Ethernet15
+  
+     description RESERVED
   
   
      no shutdown
@@ -513,6 +525,8 @@
   
   interface Ethernet16
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -524,6 +538,8 @@
   
   
   interface Ethernet17
+  
+     description RESERVED
   
   
      no shutdown
@@ -537,6 +553,8 @@
   
   interface Ethernet18
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -548,6 +566,8 @@
   
   
   interface Ethernet19
+  
+     description RESERVED
   
   
      no shutdown
@@ -575,6 +595,8 @@
   
   interface Ethernet20
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -586,6 +608,8 @@
   
   
   interface Ethernet21
+  
+     description RESERVED
   
   
      no shutdown
@@ -599,6 +623,8 @@
   
   interface Ethernet22
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -610,6 +636,8 @@
   
   
   interface Ethernet23
+  
+     description RESERVED
   
   
      no shutdown
@@ -623,6 +651,8 @@
   
   interface Ethernet24
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -634,6 +664,8 @@
   
   
   interface Ethernet25
+  
+     description RESERVED
   
   
      no shutdown
@@ -647,6 +679,8 @@
   
   interface Ethernet26
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -658,6 +692,8 @@
   
   
   interface Ethernet27
+  
+     description RESERVED
   
   
      no shutdown
@@ -671,6 +707,8 @@
   
   interface Ethernet28
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -682,6 +720,8 @@
   
   
   interface Ethernet29
+  
+     description RESERVED
   
   
      no shutdown
@@ -707,6 +747,8 @@
   
   interface Ethernet30
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -718,6 +760,8 @@
   
   
   interface Ethernet31
+  
+     description RESERVED
   
   
      no shutdown
@@ -731,6 +775,8 @@
   
   interface Ethernet32
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -742,6 +788,8 @@
   
   
   interface Ethernet33
+  
+     description RESERVED
   
   
      no shutdown
@@ -755,6 +803,8 @@
   
   interface Ethernet34
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -766,6 +816,8 @@
   
   
   interface Ethernet35
+  
+     description RESERVED
   
   
      no shutdown
@@ -791,6 +843,8 @@
   
   interface Ethernet37
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -803,6 +857,8 @@
   
   interface Ethernet38
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -814,6 +870,8 @@
   
   
   interface Ethernet39
+  
+     description RESERVED
   
   
      no shutdown
@@ -839,6 +897,8 @@
   
   interface Ethernet40
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -850,6 +910,8 @@
   
   
   interface Ethernet41
+  
+     description RESERVED
   
   
      no shutdown
@@ -863,6 +925,8 @@
   
   interface Ethernet42
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -875,6 +939,8 @@
   
   interface Ethernet43
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -886,6 +952,8 @@
   
   
   interface Ethernet44
+  
+     description RESERVED
   
   
      no shutdown
@@ -911,6 +979,8 @@
   
   interface Ethernet46
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -922,6 +992,8 @@
   
   
   interface Ethernet47
+  
+     description ACCESS
   
   
      no shutdown
