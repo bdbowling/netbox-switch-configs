@@ -169,7 +169,7 @@ interface Ethernet5
    switchport
 !
 interface Ethernet6
-   description RESERVED
+   description RESERVED - DO NOT USE
    no shutdown
    switchport
 !
