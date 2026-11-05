@@ -831,6 +831,8 @@
   
   interface Ethernet36
   
+     description RESERVED
+  
   
      no shutdown
   
