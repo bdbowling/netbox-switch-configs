@@ -271,6 +271,9 @@
   vlan 2451
      name HICKORY-DRIVE-2451
   
+  vlan 2452
+     name HICKORY-DRIVE-2452
+  
   
   ! --- Spanning Tree ---
   spanning-tree mode rapid-pvst
@@ -414,6 +417,8 @@
   spanning-tree vlan-id 2450 priority 32768
   
   spanning-tree vlan-id 2451 priority 32768
+  
+  spanning-tree vlan-id 2452 priority 32768
   
 
   ! --- Interfaces ---
@@ -1047,6 +1052,18 @@
   
   
   interface Ethernet9
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Loopback1
   
   
      no shutdown
@@ -2013,6 +2030,20 @@
   interface Vlan2451
   
      description HICKORY-DRIVE-2451
+  
+  
+     no shutdown
+  
+  
+     ! No switchport mode set in NetBox
+  
+  !
+  
+  
+  
+  interface Vlan2452
+  
+     description HICKORY-DRIVE-2452
   
   
      no shutdown
