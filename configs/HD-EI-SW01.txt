@@ -1097,6 +1097,8 @@
   
   interface Ethernet6
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -1108,6 +1110,8 @@
   
   
   interface Ethernet7
+  
+     description RESERVED
   
   
      no shutdown
@@ -1121,6 +1125,8 @@
   
   interface Ethernet8
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -1132,6 +1138,8 @@
   
   
   interface Ethernet9
+  
+     description RESERVED
   
   
      no shutdown
