@@ -581,7 +581,7 @@
   
   interface Ethernet2
   
-     description UPLINK
+     description RESERVED
   
   
      no shutdown
@@ -735,6 +735,8 @@
   
   interface Ethernet3
   
+     description RESERVED
+  
   
      no shutdown
   
@@ -886,6 +888,8 @@
   
   
   interface Ethernet4
+  
+     description XFI-UPLINK
   
   
      no shutdown
