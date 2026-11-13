@@ -707,7 +707,7 @@
   
   interface Ethernet28
   
-     description RESERVED
+     description RESERVED-AUTOCON6
   
   
      no shutdown
