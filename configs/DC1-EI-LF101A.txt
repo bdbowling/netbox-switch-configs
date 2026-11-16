@@ -79,6 +79,10 @@ vlan 600
    name STORAGE
 vlan 400
    name VDI
+vlan 3110
+   name Tenant Onboarding Data
+vlan 3111
+   name Tenant Onboarding Voice
 
 
 
@@ -165,7 +169,7 @@ interface Ethernet5
    switchport
 !
 interface Ethernet6
-   description AutoCon6
+   description 11.16.26
    no shutdown
    switchport
 !
