@@ -735,7 +735,7 @@
   
   interface Ethernet3
   
-     description RESERVED
+     description RESERVED-AUTOCON6
   
   
      no shutdown
