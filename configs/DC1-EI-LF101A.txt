@@ -169,7 +169,7 @@ interface Ethernet5
    switchport
 !
 interface Ethernet6
-   description 11.16.26
+   description 11.18.26
    no shutdown
    switchport
 !
