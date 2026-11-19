@@ -679,7 +679,7 @@
   
   interface Ethernet26
   
-     description RESERVED
+     description RESERVED-AUTOCON6
   
   
      no shutdown
