@@ -665,7 +665,7 @@
   
   interface Ethernet25
   
-     description RESERVED
+     description RESERVED-AUTOCON6
   
   
      no shutdown
