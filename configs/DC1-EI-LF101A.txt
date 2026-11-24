@@ -169,7 +169,7 @@ interface Ethernet5
    switchport
 !
 interface Ethernet6
-   description 11.18.26
+   description FOML
    no shutdown
    switchport
 !
